@@ -67,7 +67,7 @@ function animalNames(arrData) {
   arrData.forEach(elem => displayNames.push(`name: ${elem.animal_name}, scientific: ${elem.scientific_name}`));
   return displayNames;
 }
-console.log('Topic 2:', animalNames(zooAnimals));
+console.log('TR21:', animalNames(zooAnimals));
 
 /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
 The zoo needs a list of all their animal's names converted to lower case. 
@@ -75,10 +75,12 @@ Using lowerCaseNames use .map() to create a new array of strings with the animal
 For example: ['jackal, asiatic', .....]
 */
 
-function lowerCaseNames(/*Your Code Here*/) {
+function lowerCaseNames(arrData1) {
   /*Your Code Here*/
+const inLowerCase = arrData1.map(elem1 => elem1.animal_name.toLowerCase())
+return inLowerCase;
 }
-
+console.log('TR22:', lowerCaseNames(zooAnimals));
 
 /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
 The zoo is concerned about animals with a lower population count. 
@@ -87,6 +89,7 @@ Using lowPopulationAnimals use .filter() to create a new array of objects which 
 
 function lowPopulationAnimals(/*Your Code Here*/) {
   /*Your Code Here*/
+  
 }
 
 
