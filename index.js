@@ -61,10 +61,13 @@ Use animalNames to populate and return the displayNames array with only the anim
 displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
 */
 
-function animalNames(/*Your Code Here*/) {
+function animalNames(arrData) {
   /*Your Code Here*/
+  let displayNames = [];
+  arrData.forEach(elem => displayNames.push(`name: ${elem.animal_name}, scientific: ${elem.scientific_name}`));
+  return displayNames;
 }
-
+console.log('Topic 2:', animalNames(zooAnimals));
 
 /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
 The zoo needs a list of all their animal's names converted to lower case. 
