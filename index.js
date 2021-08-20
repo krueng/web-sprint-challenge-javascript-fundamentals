@@ -119,30 +119,31 @@ function consume(a, b, cb) {
   /*Your Code Here */
   return cb(a,b);
 }
-
-// console.log('TS21:', consume(3, 5, add(6,7)));
+console.log('TS21:', consume(3, 5, add));
 
 /* 🦁🦁🦁 Step 2: Create several functions to callback with consume(); 🦁🦁🦁 */
 // 🦁🦁🦁 Use add to return the sum of two numbers 🦁🦁🦁
 
-function add(/*Your Code Here */) {
+function add(num1, num2) {
   /*Your Code Here*/
+  return num1 + num2;
 }
-
+console.log('TS22a:', add(9,10));
 
 // 🦁🦁🦁 Use multiply to return the product of two numbers 🦁🦁🦁
 
-function multiply(/*Your Code Here */) {
+function multiply(num3, num4) {
   /*Your Code Here */
+  return num3 * num4;
 }
-
+console.log('TS22b:', multiply(5,11));
 
 // 🦁🦁🦁 Use greeting to accept a first and last name and return "Hello {first-name} {last-name}, nice to meet you!" 🦁🦁🦁
 
-function greeting(/*Your Code Here */) {
-  return /*Your Code Here */
+function greeting(firstN, lastN) {
+  return `Hello ${firstN} ${lastN}, nice to meet you!`;
 }
-
+console.log('TS22c:', greeting('Frist', 'Lats')); 
 
 // 🦁🦁🦁 Step 3: Check your work by un-commenting the following calls to consume(): 🦁🦁🦁 
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
