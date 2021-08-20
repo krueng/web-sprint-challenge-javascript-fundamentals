@@ -77,8 +77,8 @@ For example: ['jackal, asiatic', .....]
 
 function lowerCaseNames(arrData1) {
   /*Your Code Here*/
-const inLowerCase = arrData1.map(elem1 => elem1.animal_name.toLowerCase());
-return inLowerCase;
+  const inLowerCase = arrData1.map(elem1 => elem1.animal_name.toLowerCase());
+  return inLowerCase;
 }
 console.log('TR22:', lowerCaseNames(zooAnimals));
 
@@ -102,7 +102,7 @@ Remember the reduce method takes two arguments: a callback (which itself takes t
 
 function USApop(arrData4) {
   /*Your Code Here*/
-  const totPopu = arrData4.reduce((accu, elem4) => accu + elem4.population,0);
+  const totPopu = arrData4.reduce((accu, elem4) => accu + elem4.population, 0);
   return totPopu;
 }
 console.log('TR24:', USApop(zooAnimals));
@@ -117,7 +117,7 @@ console.log('TR24:', USApop(zooAnimals));
 
 function consume(a, b, cb) {
   /*Your Code Here */
-  return cb(a,b);
+  return cb(a, b);
 }
 console.log('TS21:', consume(3, 5, add));
 
@@ -128,7 +128,7 @@ function add(num1, num2) {
   /*Your Code Here*/
   return num1 + num2;
 }
-console.log('TS22a:', add(9,10));
+console.log('TS22a:', add(9, 10));
 
 // 🦁🦁🦁 Use multiply to return the product of two numbers 🦁🦁🦁
 
@@ -136,35 +136,41 @@ function multiply(num3, num4) {
   /*Your Code Here */
   return num3 * num4;
 }
-console.log('TS22b:', multiply(5,11));
+console.log('TS22b:', multiply(5, 11));
 
 // 🦁🦁🦁 Use greeting to accept a first and last name and return "Hello {first-name} {last-name}, nice to meet you!" 🦁🦁🦁
 
 function greeting(firstN, lastN) {
   return `Hello ${firstN} ${lastN}, nice to meet you!`;
 }
-console.log('TS22c:', greeting('Frist', 'Lats')); 
+console.log('TS22c:', greeting('Frist', 'Lats'));
 
 // 🦁🦁🦁 Step 3: Check your work by un-commenting the following calls to consume(): 🦁🦁🦁 
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
-// console.log(consume(2, 2, add)); // 4
-// console.log(consume(10, 16, multiply)); // 160
-// console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
+console.log(consume(2, 2, add)); // 4
+console.log(consume(10, 16, multiply)); // 160
+console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
 
 // 🐴🐴🐴 Topic 3: Prototypes 🐴🐴🐴 //
 //🐴🐴🐴 Task: You are to build a cuboid maker that can return values for a cuboid's volume or surface area. Cuboids are similar to cubes but do not have even sides. Follow the steps in order to accomplish this challenge. 🐴🐴🐴
 /* 🐴🐴🐴 Step 1: Base Constructor 🐴🐴🐴
  Use the constructor function named CuboidMaker to accept properties for length, width, and height which can be initialized as an object
 */
-function CuboidMaker(/*Your Code Here */) {
+function CuboidMaker(attrs) {
   /*Your Code Here */
+  this.length = attrs.length;
+  this.width = attrs.width;
+  this.height = attrs.height;
 }
 
 
 /* 🐴🐴🐴 Step 2: Volume Method 🐴🐴🐴
   Create a method called volume using CuboidMaker's prototype that returns the volume of a given cuboid's length, width, and height
   Formula for cuboid volume: length * width * height   */
-
+CuboidMaker.prototype.volume = function () {
+  const vol = this.length * this.width * this.height;
+  return vol;
+}
 
 
 
@@ -173,7 +179,10 @@ function CuboidMaker(/*Your Code Here */) {
   Create another method called surfaceArea using CuboidMaker's prototype that returns the surface area of a given cuboid's length, width, and height. 
   Formula for cuboid surface area of a cube: 
   2 * (length * width + length * height + width * height)  */
-
+CuboidMaker.prototype.surfaceArea = function(){
+  const surfArea = (this.length*this.width + this.length*this.height + this.width*this.height) * 2;
+  return surfArea;
+}
 
 
 
@@ -181,15 +190,17 @@ function CuboidMaker(/*Your Code Here */) {
 /* 🐴🐴🐴 Step 4: Create a new object that uses CuboidMaker 🐴🐴🐴
   Create an object called cuboid that uses the new keyword to use our CuboidMaker constructor
   Add properties and values of length: 4, width: 5, and height: 5 to cuboid. */
-
-
-
+  const cuboid = new CuboidMaker({
+    length: 4,
+    width: 5,
+    height: 5
+  });
 
 
 // 🐴🐴🐴 Test your volume and surfaceArea methods by uncommenting the logs below: 🐴🐴🐴
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
-// console.log(cuboid.volume()); // 100
-// console.log(cuboid.surfaceArea()); // 130
+ console.log(cuboid.volume()); // 100
+ console.log(cuboid.surfaceArea()); // 130
 
 
 // 🦄🦄🦄 Topic 4: Classes 🦄🦄🦄 //
