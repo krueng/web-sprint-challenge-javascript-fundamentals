@@ -77,7 +77,7 @@ For example: ['jackal, asiatic', .....]
 
 function lowerCaseNames(arrData1) {
   /*Your Code Here*/
-const inLowerCase = arrData1.map(elem1 => elem1.animal_name.toLowerCase())
+const inLowerCase = arrData1.map(elem1 => elem1.animal_name.toLowerCase());
 return inLowerCase;
 }
 console.log('TR22:', lowerCaseNames(zooAnimals));
@@ -87,11 +87,12 @@ The zoo is concerned about animals with a lower population count.
 Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
 */
 
-function lowPopulationAnimals(/*Your Code Here*/) {
+function lowPopulationAnimals(arrData3) {
   /*Your Code Here*/
-  
+  const lowPopu = arrData3.filter(elem2 => elem2.population < 5);
+  return lowPopu;
 }
-
+console.log('TR23:', lowPopulationAnimals(zooAnimals));
 
 /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
 The zoo needs to know their total animal population across the United States. 
