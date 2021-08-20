@@ -26,13 +26,32 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Explain the differences between `.map`, `.reduce` and `.filter` and describe a use case for each. 
 
+♻️ .map(): used mostly to convert, required a return statement, returns new array automatically.
+♻️ .reduce(): returns single value, used mostly for calculation, required 2 parameters, does not return new array, initial value will tell where to start.
+♻️ .filter(): used for filtering result, required return statement, return new array automatically.
+
 2. Explain the difference between a callback and a higher order function.
+
+♻️ Callback is a function to pass into the higher order function. More like the core, or the brain of the two. 
+♻️ Higher order function to receive callback functions. Its like a template to create more functions.
 
 3. Explain what a closure is.
 
+♻️ Closure happends when a function reaches outside of it's scope to grab a value that was defined in the parent's scope or outer function.
+
 4. Describe the four principles of the 'this' keyword.
 
+♻️ Window Binding: If no other rules apply 'this' will return the Window, Global object in node or undifined in 'strict mode'.
+♻️ Implicit Binding: Used for 80% of the time, look to left of the dot to refer to 'this', apply to object with method.
+♻️ Explicit Binding: Refers to .call() which will pass argument 1 by 1 and immidiately invokes the function, 
+- .apply() pass in arguement as an array and immidiately invokes the function, and 
+- .bind() will return a brand new function, pass in argument 1 by 1 but not immidiately invoke the function.
+♻️ New Binding: 'this' pointing to the newly created object when a function is invoked as a constructor function.
+
+
 5. Why do we need super() in an extended class?
+
+♻️ super() used by the child to call and access the parent's object so the child can inherit the parent's properties.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 

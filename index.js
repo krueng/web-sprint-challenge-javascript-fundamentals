@@ -16,11 +16,14 @@ function myFunction() {
 myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
+/*
+It's all about Closures where the outer function can't access the inner function, the internal can access the external but the external can't access the internal.
+The function can reach outside, but the outside can't reach inside, to the child. 
+Can pass things down, but not up.
 
 
 
-
-
+*/
 /* 🚀🚀🚀 Task 2: Counter 🚀🚀🚀 */
 /* Use summation to do the following:
     1. Receive a number 
@@ -179,8 +182,8 @@ CuboidMaker.prototype.volume = function () {
   Create another method called surfaceArea using CuboidMaker's prototype that returns the surface area of a given cuboid's length, width, and height. 
   Formula for cuboid surface area of a cube: 
   2 * (length * width + length * height + width * height)  */
-CuboidMaker.prototype.surfaceArea = function(){
-  const surfArea = (this.length*this.width + this.length*this.height + this.width*this.height) * 2;
+CuboidMaker.prototype.surfaceArea = function () {
+  const surfArea = (this.length * this.width + this.length * this.height + this.width * this.height) * 2;
   return surfArea;
 }
 
@@ -190,29 +193,45 @@ CuboidMaker.prototype.surfaceArea = function(){
 /* 🐴🐴🐴 Step 4: Create a new object that uses CuboidMaker 🐴🐴🐴
   Create an object called cuboid that uses the new keyword to use our CuboidMaker constructor
   Add properties and values of length: 4, width: 5, and height: 5 to cuboid. */
-  const cuboid = new CuboidMaker({
-    length: 4,
-    width: 5,
-    height: 5
-  });
+const cuboid = new CuboidMaker({
+  length: 4,
+  width: 5,
+  height: 5
+});
 
 
 // 🐴🐴🐴 Test your volume and surfaceArea methods by uncommenting the logs below: 🐴🐴🐴
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
- console.log(cuboid.volume()); // 100
- console.log(cuboid.surfaceArea()); // 130
+console.log(cuboid.volume()); // 100
+console.log(cuboid.surfaceArea()); // 130
 
 
 // 🦄🦄🦄 Topic 4: Classes 🦄🦄🦄 //
 //🦄🦄🦄 1. Take your prototypes from above and refactor into class syntax. Please rename your class CuboidMakerTwo and your object cuboidTwo 🦄🦄🦄
 class CuboidMakerTwo {
-
+  constructor(atrs) {
+    this.length = atrs.length;
+    this.width = atrs.width;
+    this.height = atrs.height;
+  }
+  volume() {
+    const vol2 = this.length * this.width * this.height;
+    return vol2;
+  }
+  surfaceArea() {
+    const surfArea2 = (this.length * this.width + this.width * this.height + this.height * this.length) * 2;
+    return surfArea2;
+  }
 }
-
+const cuboidTwo = new CuboidMakerTwo({
+  length: 4,
+  width: 5,
+  height: 5,
+});
 
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄
-// console.log(cuboidTwo.volume()); // 100
-// console.log(cuboidTwo.surfaceArea()); // 130
+console.log(cuboidTwo.volume()); // 100
+console.log(cuboidTwo.surfaceArea()); // 130
 
 
 
